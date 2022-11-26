@@ -48,3 +48,34 @@ elif ex_num == 3:
             print('Точка находится на оси X')
     except:
         print('Вы ввели какую-то дичь')
+
+elif ex_num == 4:
+    try:
+        quarter_num = int(input('Введите номер четверти координатной плоскости: '))
+        if quarter_num == 1:
+            print('X: (0;+inf)')
+            print('Y: (0;+inf)')
+        elif quarter_num == 2:
+            print('X: (-inf;0)')
+            print('Y: (0;+inf)')
+        elif quarter_num == 3:
+            print('X: (-inf;0)')
+            print('Y: (-inf;0)')
+        elif quarter_num == 4:
+            print('X: (0;+inf)')
+            print('Y: (-inf;0)')
+        else:
+            print('Вы снова ввели какую-то дичь!')
+    except:
+        print('Вы снова ввели какую-то дичь!')
+
+elif ex_num == 5:
+    try:
+        a = [float(i) for i in input('Введите координаты точки A в формате: (0,0)')[1:-1].split(',')]
+        b = [float(i) for i in input('Введите координаты точки B в формате: (0,0)')[1:-1].split(',')]  
+        d = 0
+        for i,j in zip(a,b):
+            d += (i-j)**2
+        print(f'Расстояние между точками A и B равно {d**.5}')
+    except:
+        print('Вы начинаете выводить меня из себя!')
