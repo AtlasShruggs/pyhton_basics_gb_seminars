@@ -50,6 +50,58 @@ try:
         except:
             print('Числа. Через. Пробел!')
 
+    if ex_num == 4:
+        try:
+            n = int(input('Введите целое число N: '))
+            
+            sign=''
+
+            if n < 0:
+                sign = str(n)[0]
+                n *= -1
+            
+            binary = ''
+
+
+            while n >= 1:
+                binary += str(n % 2)
+                n = n // 2
+
+            binary = sign + binary[::-1]
+
+            print(f'Двоичное представление числа {n} = {binary}')
+
+
+
+        except:
+            print('Целое число!')
+
+    if ex_num == 5:
+
+        def fibonacci(n):
+            lst = [0, 1]
+            x1, x2 = 0,1    
+            for i in range(n-1):
+                x1, x2 = x2, x1 + x2
+                lst.append(x2)
+            
+            return lst 
+        
+        try:
+            k = int(input('Введите кол-во членов последовательности Фибоначчи: '))
+            pos_fib = fibonacci(k)
+            neg_fib_temp = fibonacci(k)[1:]
+
+            neg_fib_permanent = []
+            for i, el in enumerate(neg_fib_temp):
+                neg_fib_permanent.append(el * (-1) ** i)
+
+            seq = neg_fib_permanent[::-1] + pos_fib
+
+            print(*seq, sep=' ')
+
+        except:
+            print('Опять вы накосячили :(')
 
 
 
