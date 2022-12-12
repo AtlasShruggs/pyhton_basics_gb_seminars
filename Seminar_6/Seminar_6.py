@@ -32,3 +32,14 @@ if ex_num == 2:
     print(*digits)
     print(*combined)
 
+if ex_num == 3:
+
+    lst = [el for el in input('Введите число: ')]
+
+    nums = list(filter(lambda x: x.isdigit(), lst))
+
+    nums_for_sum = [int(i) for i in nums]
+
+    print(sum(nums_for_sum))
+
+
